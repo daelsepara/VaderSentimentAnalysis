@@ -1,4 +1,13 @@
-﻿using System;
+/* C# Implementation by Dael Separa (2019)
+ * 
+ * Based on the Open-source Python code implementation of C.J. Hutto and PHP sentiment analyzer code of David Oti
+ * 
+ * see: https://github.com/cjhutto/vaderSentiment
+ * see: https://github.com/davmixcool/php-sentiment-analyzer
+ * 
+ * Comments from the original implementations are (mostly) preserved
+ */
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -6,6 +15,9 @@ using System.Linq;
 
 namespace VaderSentimentAnalysis
 {
+    /**
+     * Sentiment analyzer   
+     */   
     public class Analyzer
     {
         private readonly string LexiconFile;

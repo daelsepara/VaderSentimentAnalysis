@@ -1,7 +1,11 @@
-﻿/*
- * Baed on the PHP sentiment analyzer code of David Oti
+/* C# Implementation by Dael Separa (2019)
  * 
+ * Based on the Open-source Python code implementation of C.J. Hutto and PHP sentiment analyzer code of David Oti
+ * 
+ * see: https://github.com/cjhutto/vaderSentiment
  * see: https://github.com/davmixcool/php-sentiment-analyzer
+ * 
+ * Comments from the original implementations are (mostly) preserved
  */
 using System.Collections.Generic;
 using System.Linq;
