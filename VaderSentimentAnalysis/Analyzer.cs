@@ -387,7 +387,7 @@ namespace VaderSentimentAnalysis
             {
                 var i = Utility.Search(input_words, "least");
 
-                if (i >= 0 && !input_words[i - 1].Equals("at"))
+                if (i > 0 && !input_words[i - 1].Equals("at"))
                 {
                     return true;
                 }
