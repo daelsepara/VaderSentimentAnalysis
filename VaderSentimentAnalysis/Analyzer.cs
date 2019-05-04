@@ -431,12 +431,9 @@ namespace VaderSentimentAnalysis
         public double[] ButCheck(string[] words_and_emoticons, double[] sentiments)
         {
             // check for modification in sentiment due to contrastive conjunction 'but'
-            var bi = Utility.Search(words_and_emoticons, "but");
+            var words_and_emoticons_lower = words_and_emoticons.Select(s => s.ToLowerInvariant()).ToArray();
 
-            if (bi < 0)
-            {
-                bi = Utility.Search(words_and_emoticons, "BUT");
-            }
+            var bi = Utility.Search(words_and_emoticons_lower, "but");
 
             if (bi >= 0)
             {
@@ -444,11 +441,11 @@ namespace VaderSentimentAnalysis
                 {
                     if (si < bi)
                     {
-                        sentiments[si] = sentiments[si] * 0.5;
+                        sentiments[si] *= 0.5;
                     }
                     else if (si > bi)
                     {
-                        sentiments[si] = sentiments[si] * 1.5;
+                        sentiments[si] *= 1.5;
                     }
                 }
             }
