@@ -6,7 +6,9 @@ namespace VaderSentimentAnalysis
     {
         public static void Main(string[] args)
         {
-            var sentimentText = "The movie was good.";
+            var sentimentText = "The plot was good, but the characters are uncompelling and the dialog is not great.";
+
+            sentimentText.Trim();
 
             var analyzer = new Analyzer("vader_lexicon.txt");
 

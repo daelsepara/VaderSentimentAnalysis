@@ -193,6 +193,7 @@ namespace VaderSentimentAnalysis
                     // dampen the scalar modifier of preceding words and emoticons
                     // (excluding the ones that immediately preceed the item) based
                     // on their distance from the current item.
+
                     if (i > start_i && !Lexicon.ContainsKey(words_and_emoticons[i - (start_i + 1)].ToLower()))
                     {
                         var s = ScalarIncDec(words_and_emoticons[i - (start_i + 1)], adjustedValence, IsCapDifferential);
@@ -374,9 +375,9 @@ namespace VaderSentimentAnalysis
 
             if (include_nt)
             {
-                foreach (var word in Constants.NEGATE)
+                foreach (var word in input_words_lower)
                 {
-                    if (input_words_lower.Contains("n't"))
+                    if (word.Contains("n't"))
                     {
                         return true;
                     }
